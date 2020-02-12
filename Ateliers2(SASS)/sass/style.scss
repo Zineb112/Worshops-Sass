@@ -1,0 +1,223 @@
+$color-blue: hsl(223, 87%, 63%);
+$pale-blue: hsl(223, 100%, 88%);
+$light-red: hsl(354, 100%, 66%);
+$gray: hsl(0, 0%, 59%);
+$dark-blue: hsl(209, 33%, 12%);
+$color-silver: silver;
+$width-responsive: 600px;
+
+//Héritage//
+%Button{
+    border-radius: 25px;
+    padding: 15px;
+    background:$color-blue;
+    border: none;
+    width: 90px;
+    color: #ffffff;
+    margin-left: 9%; 
+}
+
+//mixin//
+@mixin Hover {
+    &:hover{
+    background-color: $pale-blue;
+    color: white;
+}
+}
+
+body {
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Libre Franklin', sans-serif;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90px;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+}
+
+
+
+.container{
+    
+
+    &__soon
+    {
+        display: flex;
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    justify-content: center;
+	    align-items: stretch;
+        align-content: stretch;
+    
+    }
+
+    &__soon--title{
+
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+    align-content: stretch;
+
+    }
+    
+    &__soon--paragraph{
+        color: $gray;
+        font-weight: normal;
+       
+    }
+    &__soon--title{
+        font-weight: normal;
+    }
+}
+
+.form{
+
+    display: flex;
+    justify-content: center;
+
+
+    &__input--email{
+
+        border-radius: 25px;
+        padding: 20px;
+        width: 250px;
+        height: 5px;
+        border: 1px solid $gray;
+        
+    }
+
+
+    &__button{
+        &--submit{
+            @extend %Button;
+            
+            @include Hover ();
+        }
+       
+    }
+}
+
+
+.dash{
+    &__dashboard{
+
+        width: 50%;
+        
+        padding-top: 6%;
+        padding-bottom: 8%;
+       
+
+    }
+}
+
+
+.lH{
+    font-weight: normal;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+    align-content: stretch;
+    font-size: 60%;
+    color:$gray;
+}
+
+#social{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+    align-content: stretch;
+    padding-bottom: 2%;
+    
+}
+    
+.fab{
+    margin-right: 2%;
+    color:$color-blue ;
+    border: 1px solid $pale-blue;
+    border-radius: 50%;
+    padding: .5em;
+    @include Hover();
+    
+
+}
+
+
+
+
+
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: $color-blue;
+}
+
+.attribution a {
+  color: $color-blue;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .form{
+
+        display: block;
+        justify-content: center;
+        
+    
+    
+        &__input{
+        &--email{
+    
+            width: 40%;
+            height: .0rem;
+            margin-left: 10%;
+            
+        }
+    }
+    
+    
+        &__button{
+            &--submit{
+               width: 51%;
+               margin-top: 1em;
+               padding: 1em;
+               font-size: .6em;
+            }
+          
+        }
+    }
+    
+
+    .dash{
+    &__dashboard{
+
+      padding: 5%;
+      display: flex;
+      justify-content: center;
+      width: 80vw;
+      max-width: 350px;
+      margin: 0 auto;
+       
+
+    }
+}
+
+   
+    
+    } 
